@@ -1,0 +1,28 @@
+$white-70: rgba(255, 255, 255, 0.70);
+
+.container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: solid;
+    border-radius: 0.3rem;
+    margin-top: 1%;
+    margin-left:20%;
+    margin-right:20%;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    background-color: $white-70;
+
+    h1{
+        font-family: 'Tahoma', Times, serif;
+    }
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+
+.link{
+    margin-top: 0.1rem;
+}

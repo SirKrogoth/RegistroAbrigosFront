@@ -1,0 +1,19 @@
+.button{
+    margin-top: 1rem;
+    max-width: 600px;
+    background-color: var(--azulescuro);
+    border: 0;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: filter 0.2s;
+    width: 75px;
+    color: var(--claro);
+
+    &:hover{
+        filter: brightness(1.35);
+    }
+}
+
+.buttonText{
+    color: var(--claro);
+}
