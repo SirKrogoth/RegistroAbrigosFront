@@ -1,24 +1,24 @@
 import React, { FormEvent, useState } from "react";
 
 //Início import componente NEXT
-import { GetServerSideProps } from "next";
 import Head from 'next/head';
 import Image from "next/image";
 import Link from 'next/link';
 //Término import componente NEXT
+
 import styles from "./styles.module.scss";
 import { toast } from 'react-toastify';
 import logo from "../../public/maosdadas.png";
 import { useContext } from "react";
-import { AutorizacaoContext } from '../context/Autorizacao';
-
+import { AuthContext } from '../context/AuthContext';
+import { acessoVisitante } from '../utils/acessoVisitante';
 
 //Componentes importados
 import { Input } from '../components/Input/index';
 import { Button } from '../components/Button/index';
 
 export default function Login() {
-  const { login } = useContext(AutorizacaoContext);
+  const { logar } = useContext(AuthContext);
   const [cpf, setCpf] = useState('');
   const [senha, setSenha] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,7 +38,7 @@ export default function Login() {
 
     setLoading(true);
 
-    await login(dados);
+    await logar(dados);
 
     setLoading(false);
 
@@ -54,7 +54,14 @@ export default function Login() {
       <div>
         <div className={styles.container}>
           <h1>Registro de Abrigos</h1>
-          <Image className={styles.logo} src={logo} alt="mãos dadas pelos abrigados" priority={false} />
+          <Image 
+            className={styles.logo} 
+            src={logo} 
+            alt="mãos dadas pelos abrigados" 
+            priority={false} 
+            width={150}
+            height={150}
+          />
 
           <div className={styles.login}>
             <form onSubmit={handleLogin}>
@@ -89,8 +96,10 @@ export default function Login() {
   );
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  return {
-    props: {}
+export const getServerSideProps = acessoVisitante(async (ctx) => {  
+  return {    
+    props: {
+      
+    }
   }
-};
+});

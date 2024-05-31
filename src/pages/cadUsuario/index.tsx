@@ -1,6 +1,7 @@
 import style from "./styles.module.scss";
 import Head from "next/head";
 import { Sidenav } from "../../components/SideBar";
+import { acessoPrivado } from '../../utils/acessoPrivado';
 
 export default function CadUsuario() {
   return (
@@ -20,3 +21,11 @@ export default function CadUsuario() {
     </>
   );
 }
+
+export const getServerSideProps = acessoPrivado(async (ctx) => {
+  return {
+    props: {
+
+    }
+  }
+});

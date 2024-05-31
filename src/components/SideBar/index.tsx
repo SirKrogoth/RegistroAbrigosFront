@@ -18,10 +18,10 @@ export function Sidenav(){
     <div>
       <div id="mySidenav" className={`${styles.sidenav} ${isOpen ? styles.open : ''}`}>
         <a href="javascript:void(0)" className={styles.closebtn} onClick={closeNav}>&times;</a>
-        <a href="#">Principal</a>
         <Link id="cadAbrigado" href='/cadAbrigado'>Abrigados</Link>
-        <a href="#">Salas</a>
+        <Link id="cadSalas" href='/cadSalas'>Salas</Link>        
         <Link id="cadUsuario" href='/cadUsuario'>Usuários</Link>
+        <Link id="logoff" href='/cadUsuario'>Sair</Link>
         
       </div>
       <span onClick={openNav} className={styles.openbtn}>Menu</span>
