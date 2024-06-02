@@ -43,7 +43,7 @@ export default function CadUsuario() {
               value=""
             /><br/>
             <TextArea
-              cols={35}
+              cols={114}
               rows={5}
               placeholder="Informe aqui alguma observação relevante a respeito do abrigado."
             >              
